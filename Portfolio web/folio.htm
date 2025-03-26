@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Developer - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* styles.css */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    transition: transform 0.5s ease;
+}
+
+.hero-content h1:hover {
+    transform: translateY(-10px);
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile-image img:hover {
+    transform: rotate(360deg) scale(1.05);
+    animation: anime ease infinite;
+}
+
+
+/* Projects Section */
+.projects {
+    background-color: white;
+    padding: 50px 0;
+    border-radius: 20px;
+    display: flex;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.contact {
+    margin-bottom: 30px;
+    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+
+.contact input, 
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 30px;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.pro {
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.pro:hover {
+    background: linear-gradient(black,rgb(13, 13, 13),rgb(12,12,12),rgb(14,14,14),rgb(17,17,17));
+    color: white;
+}
+</style>
+<body>
+    <div class="portfolio-container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h1>Wealth Developer</h1>
+                    <p>Full Stack Web Development & Designer Student</p>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="profile-image">
+                        <img src="/Responsive Card Slider 1/images/avatar-1.png" alt="Profile">
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Passionate developer with expertise in modern web technologies. 
+                            I create responsive and innovative web solutions that deliver exceptional user experiences.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects" class="pro">
+                <h2>&nbsp;&nbsp;&nbsp;My Projects</h2>
+                <div class="project-grid" id="project-grid" style="border-radius: 15px;">
+                    <nav>
+                        <ul  style="margin-left: 40px;
+                                justify-content: center;" class="pro">
+                            <li><a href="/Clock/clock.html">Clock</a></li>
+                            <li><a href="/FullscreenImageSlider-master/FullscreenImageSlider-master/index.html">Image slider</a></li>
+                            <li><a href="/Contact Page/contact.html">Contact Page</a></li>
+                            <li><a href="/Animated-responsive-image-slider-master/Animated-responsive-image-slider-master/createImageSliderResponsive.html">Another Image slider</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Contact Me</h2>
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/Wealthometer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wealth-hajoh-a5a61433a/">LinkedIn</a>
+                <a href="https://x.com/wealthometer_10">Twitter</a>
+            </div>
+            <p>&copy; 2024 Wealth Developer. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js">
+        // script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const projects = [
+        { name: "E-Commerce Platform", tech: "React, Node.js" },
+        { name: "Social Media Dashboard", tech: "Vue.js, Firebase" },
+        { name: "Weather App", tech: "JavaScript, OpenWeather API" }
+    ];
+    
+    const projectGrid = document.getElementById("project-grid");
+    projects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.classList.add("project-card");
+        projectCard.innerHTML = `
+            <h3>${project.name}</h3>
+            <p>${project.tech}</p>
+        `;
+        projectGrid.appendChild(projectCard);
+    });
+});
+    </script>
+</body>
+</html>
